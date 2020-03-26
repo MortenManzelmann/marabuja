@@ -1,4 +1,11 @@
+const path = require('path');
+
 module.exports = {
+  entry: './src/frontend/index.tsx',
+  output: {
+    path: path.resolve(__dirname, 'dist/frontend'),
+    filename: 'main.js'
+  },
   mode: "production",
 
   // Enable sourcemaps for debugging webpack's output.
@@ -16,9 +23,11 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: "ts-loader"
+            loader: "ts-loader",
+            options: { configFile : 'frontend.tsconfig.json'}
           }
-        ]
+        ],
+
       },
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
       {
@@ -28,6 +37,7 @@ module.exports = {
       }
     ]
   },
+
 
   // When importing a module whose path matches one of the following, just
   // assume a corresponding global variable exists and use that instead.

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/backend",
+    "baseUrl": "./src/backend",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es2017",
+  },
+  "include": [
+    "src/backend/**/*.ts",
+    "src/backend/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
