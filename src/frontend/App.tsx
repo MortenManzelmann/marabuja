@@ -1,13 +1,13 @@
-import * as React from "react";
-import Hello from "./components/Hello"
+import * as React from 'react';
+import App from './interfaces/App';
+import Hello from './components/Hello';
 
-export interface AppProps { name: string; }
 
-const App = ({name}: AppProps) => {
+const App = ({name}: App) => {
   return ( 
   <div>
     <h1>{name}</h1>
-    <Hello compiler='Typscript' framework='React'/>
+    <Hello compiler='Typeeeeescript' framework='React'/>
   </div>
   )
 };
