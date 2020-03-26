@@ -6,7 +6,9 @@ import {
   Link
 } from 'react-router-dom';
 
-import Hello from './components/Hello';
+import Board from './pages/board/Board';
+import Overview from './pages/overview/Overview';
+import Proposals from './pages/proposals/Proposals';
 
 interface App {
   name: string;
@@ -19,26 +21,26 @@ const App = ({name}: App) => {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Overview</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/board">About</Link>
           </li>
           <li>
-            <Link to="/users">Users</Link>
+            <Link to="/proposals">Users</Link>
           </li>
         </ul>
       </nav>
 
       <Switch> 
-        <Route path="/about">
-          <Hello compiler='gcc' framework='symfony'/>
+        <Route path="/board">
+          <Board compiler='gcc' framework='symfony'/>
         </Route>
-        <Route path="/users">
-          <Hello compiler='user' framework='symfony'/>
+        <Route path="/proposals">
+          <Proposals compiler='user' framework='symfony'/>
         </Route>
         <Route path="/">
-          <Hello compiler='home' framework='symfony'/>
+          <Overview compiler='home' framework='symfony'/>
         </Route>
       </Switch>
     </div>
