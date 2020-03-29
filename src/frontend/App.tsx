@@ -10,6 +10,8 @@ import Board from './pages/board/Board';
 import Overview from './pages/overview/Overview';
 import Proposals from './pages/proposals/Proposals';
 
+import scoutRecommendationsMock from './fixtures/scout-recommendation.mock';
+
 interface App {
   name: string;
 }
@@ -24,17 +26,17 @@ const App = ({name}: App) => {
             <Link to="/">Overview</Link>
           </li>
           <li>
-            <Link to="/board">About</Link>
+            <Link to="/board">Board</Link>
           </li>
           <li>
-            <Link to="/proposals">Users</Link>
+            <Link to="/proposals">Proposals</Link>
           </li>
         </ul>
       </nav>
 
       <Switch> 
         <Route path="/board">
-          <Board compiler='gcc' framework='symfony'/>
+          <Board scoutRecommendationsList={scoutRecommendationsMock} />
         </Route>
         <Route path="/proposals">
           <Proposals compiler='user' framework='symfony'/>

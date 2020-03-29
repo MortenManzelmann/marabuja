@@ -19,7 +19,7 @@ module.exports = {
         use: [
           {
             loader: "ts-loader",
-            options: { configFile : 'frontend.tsconfig.json'}
+            options: { configFile: 'frontend.tsconfig.json' }
           }
         ],
 
@@ -28,11 +28,30 @@ module.exports = {
         enforce: "pre",
         test: /\.js$/,
         loader: "source-map-loader"
+      },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: "style-loader"
+          }, {
+            loader: "css-modules-typescript-loader"
+          }, {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+              modules: true,
+            }
+          },
+          {
+            loader: "less-loader"
+          }
+        ]
       }
     ]
   },
-//  externals: {
-//    "react": "React",
-//    "react-dom": "ReactDOM"
-//  }
+  //  externals: {
+  //    "react": "React",
+  //    "react-dom": "ReactDOM"
+  //  }
 };

@@ -4,6 +4,8 @@
     "baseUrl": "./src/frontend",
     "sourceMap": true,
     "noImplicitAny": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "module": "commonjs",
     "target": "es2017",
     "jsx": "react"
