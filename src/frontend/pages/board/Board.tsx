@@ -3,6 +3,7 @@ import ScoutRecommendationTile from '../../ui-basic/components/scout-recommendat
 import scoutRecommendationsList from './components/scout-recomendation-list/scout-recommendations-list'
 import { ScoutRecommendation } from "../../ui-basic/interfaces/scout-recommendation";
 import ScoutRecommendationsList from "./components/scout-recomendation-list/scout-recommendations-list";
+import style from './style.less';
 
 interface Props{
   scoutRecommendationsList: ScoutRecommendation[]

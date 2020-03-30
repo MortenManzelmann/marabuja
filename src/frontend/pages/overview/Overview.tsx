@@ -1,7 +1,8 @@
-import * as React from "react";
+import React, { FunctionComponent } from 'react';
+import style from './style.less';
 
-interface OverviewProps{ compiler: string; framework: string; }
+interface OverviewProps { compiler: string; framework: string; }
 
-const Overview = (props: OverviewProps) => <h1>Overview from {props.compiler} and {props.framework}!</h1>;
+const Overview: FunctionComponent<OverviewProps> = ({ compiler, framework }) => <div className={style.component}><h1>Overview from {compiler} and {framework}!</h1></div>;
 
 export default Overview;
