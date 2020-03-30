@@ -8,6 +8,7 @@
     "@types/less": "^3.0.1",
     "css-loader": "^3.4.2",
     "css-modules-typescript-loader": "^4.0.0",
+    "html-webpack-plugin": "^4.0.3",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
     "source-map-loader": "^0.2.4",
