@@ -4,17 +4,18 @@ import {
     Router
 } from 'express';
 import projectDirectory from '../../root.service';
+import { Controller } from '../interfaces/controller.interface';
 
-class IndexController {
-    public path = '*';
-    public router = Router();
+class IndexController implements Controller{
+    PATH = '';
+    public router: Router = Router();
 
     constructor() {
-        this.intializeRoutes();
+        this.initializeRoutes();
     }
 
-    public intializeRoutes() {
-        this.router.get(this.path, this.getIndexSite);
+    public initializeRoutes() {
+        this.router.get(this.PATH, this.getIndexSite);
     }
 
     getIndexSite = (request: Request, response: Response) => {
