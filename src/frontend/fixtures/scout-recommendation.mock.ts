@@ -1,5 +1,5 @@
-import { ScoutRecommendation } from "../ui-basic/interfaces/scout-recommendation"
-import { ScoutRecommendationList } from "../pages/board/interfaces/scout-recommendation-list"
+import { ScoutRecommendation } from "../interfaces/scout-recommendation.interface"
+import { ScoutRecommendationList } from "../interfaces/scout-recommendation-list.interface"
 
 const tile1: ScoutRecommendation = {
   id: 1,
@@ -25,6 +25,6 @@ const tile3: ScoutRecommendation = {
   created: 'today',
 }
 
-const scoutRecommendationsMock = [tile1, tile2, tile3]; 
+const scoutRecommendationsMock: ScoutRecommendationList = { scoutRecommendationsList : [tile1, tile2, tile3]}; 
 
 export default scoutRecommendationsMock

@@ -5,9 +5,9 @@ import {
   Route
 } from 'react-router-dom';
 
-import Board from './pages/board/Board';
-import Overview from './pages/overview/Overview';
-import Proposals from './pages/proposals/Proposals';
+import Board from './pages/board/board.page';
+import OverviewPage from './pages/overview/overview.page';
+import Proposals from './pages/proposals/proposal.page';
 import Navigation from './ui-basic/components/navigation/navigation.component'
 import Page from './ui-basic/container/page/page.container';
 
@@ -25,17 +25,17 @@ const App = ({ name }: App) => {
         <Switch>
           <Route path="/board">
             <Page>
-              <Board scoutRecommendationsList={scoutRecommendationsMock} />
+              <Board page={{title: 'Board', subTitle: ''}} scoutRecommendationsList={scoutRecommendationsMock} />
             </Page>
           </Route>
           <Route path="/proposals">
             <Page>
-              <Proposals compiler='user' framework='symfony' />
+              <Proposals page={{title: 'Proposals', subTitle: ''}} />
             </Page>
           </Route>
           <Route path="/">
             <Page>
-              <Overview compiler='home' framework='symfony' />
+              <OverviewPage page={{title: 'Overview', subTitle: ''}} />
             </Page>
           </Route>
         </Switch>

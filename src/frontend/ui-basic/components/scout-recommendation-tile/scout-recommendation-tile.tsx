@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from "react";
-import {ScoutRecommendation} from '../../interfaces/scout-recommendation';
+import {ScoutRecommendation} from '../../../interfaces/scout-recommendation.interface';
 import style from './style.less';
 
 interface Props {

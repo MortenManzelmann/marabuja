@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import ScoutRecommendationTile from '../../../../ui-basic/components/scout-recommendation-tile/scout-recommendation-tile';
-import { ScoutRecommendation } from '../../../../ui-basic/interfaces/scout-recommendation';
+import { ScoutRecommendation } from '../../../../interfaces/scout-recommendation.interface';
 import style from './style.less';
 
 interface Props {
