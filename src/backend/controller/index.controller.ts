@@ -7,7 +7,7 @@ import projectDirectory from '../../root.service';
 import { Controller } from '../interfaces/controller.interface';
 
 class IndexController implements Controller{
-    PATH = '';
+    PATH = '*';
     public router: Router = Router();
 
     constructor() {

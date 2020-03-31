@@ -4,7 +4,6 @@ import {
   Router,
   request
 } from 'express';
-import projectDirectory from '../../../root.service';
 
 import scoutRecommendationsMock from '../../fixtures/scout-recommendation.mock';
 import { Controller } from '../../interfaces/controller.interface';

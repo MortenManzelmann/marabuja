@@ -4,8 +4,8 @@ import ScoutRecommendationApiController from './backend/controller/api/scout-rec
  
 const app = new App(
   [
-    new IndexController(),
-    new ScoutRecommendationApiController()
+    new ScoutRecommendationApiController(),
+    new IndexController()
   ],
   3000,
 );
