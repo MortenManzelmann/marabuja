@@ -1,5 +1,5 @@
 import {ScoutRecommendation} from './scout-recommendation.interface';
 
-export interface ScoutRecommendationList{
+export default interface ScoutRecommendationList{
   scoutRecommendationsList: ScoutRecommendation[];
 }

@@ -4,7 +4,7 @@ import { ScoutRecommendationList } from "../interfaces/scout-recommendation-list
 const tile1: ScoutRecommendation = {
   id: 1,
   title: 'Title',
-  description: 'Description',
+  description: 'I\'m from the backend',
   author: 'Author',
   created: 'today',
 }

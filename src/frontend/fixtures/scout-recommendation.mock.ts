@@ -1,5 +1,5 @@
 import { ScoutRecommendation } from "../interfaces/scout-recommendation.interface"
-import { ScoutRecommendationList } from "../interfaces/scout-recommendation-list.interface"
+import ScoutRecommendationList from "../interfaces/scout-recommendation-list.interface"
 
 const tile1: ScoutRecommendation = {
   id: 1,

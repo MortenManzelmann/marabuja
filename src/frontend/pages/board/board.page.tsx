@@ -1,32 +1,79 @@
-import React, { FunctionComponent } from "react";
+import React, { Component } from "react";
 import { Helmet } from 'react-helmet';
-import ScoutRecommendationApi from './api/scout-recommendation.api';
-import { ScoutRecommendationList } from "../../interfaces/scout-recommendation-list.interface";
+import { connect } from 'react-redux';
+import { AppState } from 'reducers';
+import {actionFetchRecommendations} from '../../actions'
+
+import Page from '../../ui-basic/container/page/page.container';
 import ScoutRecommendationsList from "./components/scout-recomendation-list/scout-recommendations-list";
+
+import ScoutRecommendationList from "../../interfaces/scout-recommendation-list.interface";
 import PageInterface from '../../interfaces/page.interface';
 
-
-
-interface Props {
-  page: PageInterface;
-  scoutRecommendationsList: ScoutRecommendationList;
+interface BoardProps {
+  loadData: () => () => void,
+  // page: PageInterface,
+  scoutRecommendations: ScoutRecommendationList,
+  state: string,
+  errorMessage?: string,
 }
 
-const Board: FunctionComponent<Props> = ({
-  page, scoutRecommendationsList
-}) => {
-  const scoutRecommendation: ScoutRecommendationApi = new ScoutRecommendationApi();
-  return (
-    <section>
-      <Helmet>
-        <title>
-          Board
-        </title>
-      </Helmet>
-      <h1>Board</h1>
-      <ScoutRecommendationsList scoutRecommendations={scoutRecommendation.getAll()} />
-    </section>
-  );
+interface State {
+}
+
+class Board extends Component<BoardProps, State> {
+
+  constructor(props: BoardProps, state: State) {
+    super(props, state);
+  }
+
+  componentDidMount() {
+    if (this.props.state === 'INIT') {
+      this.props.loadData();
+    }
+  }
+
+  render() {
+    return (
+      <Page>
+      <section>
+        <Helmet>
+          <title>
+            Board
+          </title>
+        </Helmet>
+        <h1>Board</h1>
+        {this.renderRecommendations()}
+      </section>
+      </Page>
+    );
+  }
+
+  renderRecommendations() {
+    if (this.props.state === 'LOADING') {
+      return (<p>Loading ...</p>);
+    } else if (this.props.state === 'ERROR') {
+      return (<p>Error: {this.props.errorMessage}</p>);
+    } else if (this.props.state === 'LOADED') {
+      return (<ScoutRecommendationsList scoutRecommendations={this.props.scoutRecommendations} />);
+    } else {
+      return 'Init State';
+    }
+  }
 };
 
-export default Board;
+const mapStateToProps = (state: AppState, ownProps: BoardProps) => {
+  return {
+    scoutRecommendations: state.list.scoutRecommendations,
+    state: state.list.state,
+    errorMessage: ''
+  };
+};
+
+const mapDispatchToProps = (dispatch: any) => { // tslint:disable-line
+  return {
+    loadData: () => dispatch(actionFetchRecommendations())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Board);
