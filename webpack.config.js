@@ -50,13 +50,14 @@ module.exports = {
         ]
       }
     ]
-  // },
-  // plugins: [
-  //   new HtmlWebpackPlugin(
-  //     {
-  //       title: 'Jungpioniere',
-  //       template: 'src/index.html'
-  //     }
-  //   )
-  // ]
-};
+    // },
+    // plugins: [
+    //   new HtmlWebpackPlugin(
+    //     {
+    //       title: 'Jungpioniere',
+    //       template: 'src/index.html'
+    //     }
+    //   )
+    // ]
+  }
+}
