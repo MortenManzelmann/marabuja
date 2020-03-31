@@ -1,4 +1,4 @@
-import {ScoutRecommendation} from '../../../ui-basic/interfaces/scout-recommendation';
+import {ScoutRecommendation} from './scout-recommendation.interface';
 
 export interface ScoutRecommendationList{
   scoutRecommendationsList: ScoutRecommendation[];

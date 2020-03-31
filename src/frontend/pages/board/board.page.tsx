@@ -1,12 +1,11 @@
 import React, { FunctionComponent } from "react";
 import { Helmet } from 'react-helmet';
-import ScoutRecommendationTile from '../../ui-basic/components/scout-recommendation-tile/scout-recommendation-tile';
-import scoutRecommendationsList from './components/scout-recomendation-list/scout-recommendations-list'
+import ScoutRecommendationApi from './api/scout-recommendation.api';
 import { ScoutRecommendationList } from "../../interfaces/scout-recommendation-list.interface";
 import ScoutRecommendationsList from "./components/scout-recomendation-list/scout-recommendations-list";
-import PageInterface from '../../interfaces/page.interface'; 
-import style from './style.less';
-import { ScoutRecommendation } from "../../interfaces/scout-recommendation.interface";
+import PageInterface from '../../interfaces/page.interface';
+
+
 
 interface Props {
   page: PageInterface;
@@ -16,6 +15,7 @@ interface Props {
 const Board: FunctionComponent<Props> = ({
   page, scoutRecommendationsList
 }) => {
+  const scoutRecommendation: ScoutRecommendationApi = new ScoutRecommendationApi();
   return (
     <section>
       <Helmet>
@@ -24,7 +24,7 @@ const Board: FunctionComponent<Props> = ({
         </title>
       </Helmet>
       <h1>Board</h1>
-      <ScoutRecommendationsList scoutRecommendationsList={scoutRecommendationsList.scoutRecommendationsList} />
+      <ScoutRecommendationsList scoutRecommendations={scoutRecommendation.getAll()} />
     </section>
   );
 };
