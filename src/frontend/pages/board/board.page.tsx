@@ -55,7 +55,7 @@ class Board extends Component<BoardProps, State> {
     } else if (this.props.state === 'ERROR') {
       return (<p>Error: {this.props.errorMessage}</p>);
     } else if (this.props.state === 'LOADED') {
-      return (<ScoutRecommendationsList scoutRecommendations={this.props.scoutRecommendations} />);
+      return (<ScoutRecommendationsList />);
     } else {
       return 'Init State';
     }
@@ -70,7 +70,7 @@ const mapStateToProps = (state: AppState, ownProps: BoardProps) => {
   };
 };
 
-const mapDispatchToProps = (dispatch: any) => { // tslint:disable-line
+const mapDispatchToProps = (dispatch: any) => {
   return {
     loadData: () => dispatch(actionFetchRecommendations())
   };
