@@ -29,7 +29,7 @@ export function scoutRecommendationListReducer(state: ScoutRecommendationListSta
       return {
         ...state,
         state: 'LOADED',
-        scoutRecommendations: action.scoutRecommendations
+        scoutRecommendations:  action.scoutRecommendations
       }
     case 'RECOMMEDNATIONS_FETCH_ERROR':
       return {

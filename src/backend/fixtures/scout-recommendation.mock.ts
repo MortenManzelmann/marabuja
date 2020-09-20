@@ -2,7 +2,7 @@ import { ScoutRecommendation } from "../interfaces/scout-recommendation.interfac
 import { ScoutRecommendationList } from "../interfaces/scout-recommendation-list.interface"
 
 const tile1: ScoutRecommendation = {
-  id: 1,
+  _id: '1',
   title: 'Title',
   description: 'I\'m from the backend',
   author: 'Author',
@@ -10,7 +10,7 @@ const tile1: ScoutRecommendation = {
 }
 
 const tile2: ScoutRecommendation = {
-  id: 2,
+  _id: '2',
   title: 'something',
   description: 'Description',
   author: 'Author',
@@ -18,7 +18,7 @@ const tile2: ScoutRecommendation = {
 }
 
 const tile3: ScoutRecommendation = {
-  id: 3,
+  _id: '3',
   title: 'Title',
   description: 'Description',
   author: 'Author',

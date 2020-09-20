@@ -1,5 +1,5 @@
 export interface ScoutRecommendation {
-  id: number;
+  _id?: string;
   title: string;
   description: string;
   author: string;
