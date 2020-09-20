@@ -1,6 +1,8 @@
 import express, { Application } from 'express';
 import * as bodyParser from 'body-parser';
 import { Controller } from './interfaces/controller.interface';
+import mongoose from 'mongoose';
+import 'dotenv/config';
 
 class App {
   public app: Application;
@@ -12,6 +14,7 @@ class App {
 
     this.initializeMiddlewares();
     this.initializeControllers(controllers);
+    this.connectToTheDatabase();
   }
 
   private initializeMiddlewares() {
@@ -29,6 +32,14 @@ class App {
     this.app.listen(this.port, () => {
       console.log(`App listening on the port ${this.port}`);
     });
+  }
+
+  private connectToTheDatabase() {
+    const {
+      MONGO_PATH,
+    } = process.env;
+    
+    mongoose.connect(`mongodb://${MONGO_PATH}`);
   }
 }
 
