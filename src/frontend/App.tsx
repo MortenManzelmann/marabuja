@@ -12,8 +12,6 @@ import Proposals from './pages/proposals/proposal.page';
 import Navigation from './ui-basic/components/navigation/navigation.component'
 import Page from './ui-basic/container/page/page.container';
 
-import scoutRecommendationsMock from './fixtures/scout-recommendation.mock';
-
 const App: StatelessComponent<{}> = () => {
   return (
    

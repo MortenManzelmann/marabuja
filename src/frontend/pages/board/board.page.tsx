@@ -5,7 +5,7 @@ import { AppState } from 'reducers';
 import {actionFetchRecommendations} from '../../actions'
 
 import Page from '../../ui-basic/container/page/page.container';
-import ScoutRecommendationsList from "./components/scout-recomendation-list/scout-recommendations-list";
+import MessageList from "./components/scout-recomendation-list/message-list";
 
 import ScoutRecommendationList from "../../interfaces/scout-recommendation-list.interface";
 import PageInterface from '../../interfaces/page.interface';
@@ -55,7 +55,7 @@ class Board extends Component<BoardProps, State> {
     } else if (this.props.state === 'ERROR') {
       return (<p>Error: {this.props.errorMessage}</p>);
     } else if (this.props.state === 'LOADED') {
-      return (<ScoutRecommendationsList />);
+      return (<MessageList />);
     } else {
       return 'Init State';
     }

@@ -12,7 +12,7 @@ interface Props {
   scoutRecommendations?: ScoutRecommendationList
 }
 
-const ScoutRecommendationsList: FunctionComponent<Props> = ({ scoutRecommendations }) => {
+const MessageList: FunctionComponent<Props> = ({ scoutRecommendations }) => {
   return (
     <div className={style.component}>
       <ul>
@@ -36,4 +36,5 @@ const mapStateToProps = (state: AppState, ownProps: Props) => {
   };
 };
 
-export default connect<ReturnType<typeof mapStateToProps>, undefined, Props, AppState>(mapStateToProps)(ScoutRecommendationsList);
+export default connect<ReturnType<typeof mapStateToProps>, undefined, Props, AppState>(mapStateToProps)(MessageList);
+
