@@ -1,7 +1,7 @@
 version: "2"
 services:
   app:
-    container_name: app
+    container_name: app-ts
     restart: always
     build: .
     volumes:
@@ -11,7 +11,7 @@ services:
     links:
       - mongo
   mongo:
-    container_name: mongo
+    container_name: mongo-ts
     image: mongo
     volumes:
       - ./data:/data/db
