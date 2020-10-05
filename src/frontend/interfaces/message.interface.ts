@@ -1,4 +1,4 @@
-export interface ScoutRecommendation {
+export interface Message {
   title: string;
   description: string;
   author: string;
