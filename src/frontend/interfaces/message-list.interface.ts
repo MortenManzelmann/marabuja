@@ -1,5 +1,5 @@
-import {ScoutRecommendation} from './scout-recommendation.interface';
+import {Message} from './message.interface';
 
-export interface ScoutRecommendationList{
-  messageList: ScoutRecommendation[];
+export interface MessageList {
+  messageList: Message[];
 }

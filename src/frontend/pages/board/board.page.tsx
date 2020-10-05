@@ -7,12 +7,12 @@ import { actionFetchMessage} from '../../actions'
 import Page from '../../ui-basic/container/page/page.container';
 import MessageList from "./components/message-list";
 
-import MessageListInterface from "../../interfaces/message-list.interface";
+import {MessageList as MessageListInterface } from "../../interfaces/message-list.interface";
 
 interface BoardProps {
   loadData: () => () => void,
   // page: PageInterface,
-  scoutRecommendations: MessageListInterface,
+    messageList: MessageListInterface,
   state: string,
   errorMessage?: string,
 }
@@ -42,13 +42,13 @@ class Board extends Component<BoardProps, State> {
           </title>
         </Helmet>
         <h1>Board</h1>
-        {this.renderRecommendations()}
+        {this.renderMessageList()}
       </section>
       </Page>
     );
   }
 
-  renderRecommendations() {
+  renderMessageList() {
     if (this.props.state === 'LOADING') {
       return (<p>Loading ...</p>);
     } else if (this.props.state === 'ERROR') {
@@ -63,7 +63,7 @@ class Board extends Component<BoardProps, State> {
 
 const mapStateToProps = (state: AppState, ownProps: BoardProps) => {
   return {
-    scoutRecommendations: state.list.scoutRecommendations,
+    messageList: state.list.scoutRecommendations,
     state: state.list.state,
     errorMessage: ''
   };

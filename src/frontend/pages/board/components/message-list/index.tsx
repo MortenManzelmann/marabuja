@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import MessageTile from '../../../../ui-basic/components/message-tile';
-import MessageList from '../../../../interfaces/message-list.interface';
+import {MessageList} from '../../../../interfaces/message-list.interface';
 import style from './style.less';
 import MessageForm from '../recommendation-form';
 import { connect } from 'react-redux';
