@@ -2,18 +2,18 @@ import {
   AppActions
 } from '../actions';
 
-import ScoutRecommendationList from "../interfaces/scout-recommendation-list.interface";
+import {MessageList} from "../interfaces/message-list.interface";
 
 export interface ScoutRecommendationListState {
   state: string, // 'INIT', 'LOADING' | 'LOADED' | 'ERROR',
-  scoutRecommendations: ScoutRecommendationList,
+  scoutRecommendations: MessageList,
   errorMessage?: string
 }
 
 export function defaultScoutRecommendationListState(): ScoutRecommendationListState {
   return {
     state: 'INIT',
-    scoutRecommendations: { scoutRecommendationsList: [] }
+    messageList: { messageList: [] }
   };
 }
 
@@ -23,7 +23,7 @@ export function scoutRecommendationListReducer(state: ScoutRecommendationListSta
       return {
         ...state,
         state: 'LOADING',
-        scoutRecommendations: { scoutRecommendationsList: [] }
+        messageList: { messageList: [] }
       }
     case 'RECOMMEDNATIONS_FETCH_SUCCESS':
       return {
@@ -35,7 +35,7 @@ export function scoutRecommendationListReducer(state: ScoutRecommendationListSta
       return {
         ...state,
         state: 'ERROR',
-        scoutRecommendations: { scoutRecommendationsList: [] },
+        messageList: { messageList: [] },
         errorMessage: action.errorMessage
       }
     default:

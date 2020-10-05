@@ -2,18 +2,17 @@ import React, { Component } from "react";
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { AppState } from 'reducers';
-import {actionFetchRecommendations} from '../../actions'
+import { actionFetchMessage} from '../../actions'
 
 import Page from '../../ui-basic/container/page/page.container';
-import MessageList from "./components/scout-recomendation-list/message-list";
+import MessageList from "./components/message-list";
 
-import ScoutRecommendationList from "../../interfaces/scout-recommendation-list.interface";
-import PageInterface from '../../interfaces/page.interface';
+import MessageListInterface from "../../interfaces/message-list.interface";
 
 interface BoardProps {
   loadData: () => () => void,
   // page: PageInterface,
-  scoutRecommendations: ScoutRecommendationList,
+  scoutRecommendations: MessageListInterface,
   state: string,
   errorMessage?: string,
 }
@@ -72,7 +71,7 @@ const mapStateToProps = (state: AppState, ownProps: BoardProps) => {
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    loadData: () => dispatch(actionFetchRecommendations())
+    loadData: () => dispatch(actionFetchMessage())
   };
 };
 
