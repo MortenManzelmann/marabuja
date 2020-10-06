@@ -5,14 +5,14 @@ import { AppState } from 'reducers';
 import { actionFetchMessage} from '../../actions'
 
 import Page from '../../ui-basic/container/page/page.container';
-import MessageList from "./components/message-list";
+import MessageListComponent from "./components/message-list";
 
 import {MessageList as MessageListInterface } from "../../interfaces/message-list.interface";
 
 interface BoardProps {
   loadData: () => () => void,
   // page: PageInterface,
-    messageList: MessageListInterface,
+  messageList: MessageListInterface,
   state: string,
   errorMessage?: string,
 }
@@ -54,7 +54,7 @@ class Board extends Component<BoardProps, State> {
     } else if (this.props.state === 'ERROR') {
       return (<p>Error: {this.props.errorMessage}</p>);
     } else if (this.props.state === 'LOADED') {
-      return (<MessageList />);
+      return (<MessageListComponent />);
     } else {
       return 'Init State';
     }
@@ -63,7 +63,7 @@ class Board extends Component<BoardProps, State> {
 
 const mapStateToProps = (state: AppState, ownProps: BoardProps) => {
   return {
-    messageList: state.list.scoutRecommendations,
+    messageList: state.list.messageList,
     state: state.list.state,
     errorMessage: ''
   };

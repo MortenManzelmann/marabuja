@@ -6,7 +6,7 @@ import {MessageList} from "../interfaces/message-list.interface";
 
 export interface ScoutRecommendationListState {
   state: string, // 'INIT', 'LOADING' | 'LOADED' | 'ERROR',
-  scoutRecommendations: MessageList,
+  messageList: MessageList,
   errorMessage?: string
 }
 
@@ -19,19 +19,19 @@ export function defaultScoutRecommendationListState(): ScoutRecommendationListSt
 
 export function scoutRecommendationListReducer(state: ScoutRecommendationListState, action: AppActions): ScoutRecommendationListState {
   switch (action.type) {
-    case 'RECOMMEDNATIONS_FETCH':
+    case 'MESSAGE_FETCH':
       return {
         ...state,
         state: 'LOADING',
         messageList: { messageList: [] }
       }
-    case 'RECOMMEDNATIONS_FETCH_SUCCESS':
+    case 'MESSAGE_FETCH_SUCCESS':
       return {
         ...state,
         state: 'LOADED',
-        scoutRecommendations:  action.scoutRecommendations
+        messageList:  action.scoutMessage,
       }
-    case 'RECOMMEDNATIONS_FETCH_ERROR':
+    case 'MESSAGE_FETCH_ERROR':
       return {
         ...state,
         state: 'ERROR',

@@ -1,4 +1,4 @@
-import {scoutRecommendationListReducer, defaultScoutRecommendationListState, ScoutRecommendationListState} from './scoutRecommendationsList';
+import {scoutRecommendationListReducer, defaultScoutRecommendationListState, ScoutRecommendationListState} from './message-list.reducer';
 import { Action } from 'redux';
 
 export interface AppState {

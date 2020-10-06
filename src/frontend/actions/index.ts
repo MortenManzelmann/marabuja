@@ -1,5 +1,5 @@
 import { Action, Dispatch } from 'redux';
-import MessageList from "../interfaces/message-list.interface";
+import { MessageList } from "../interfaces/message-list.interface";
 import MessageApi from '../services/api/message.api';
 import { Message } from  '../interfaces/message.interface'
 

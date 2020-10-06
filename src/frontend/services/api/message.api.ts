@@ -1,21 +1,20 @@
 import axios, { AxiosResponse } from 'axios';
-import ScoutRecommendationList from '../../interfaces/scout-recommendation-list.interface';
-import MessageList from '../../pages/board/components/scout-recomendation-list/message-list';
-import {ScoutRecommendation} from '../../interfaces/scout-recommendation.interface'
+import {MessageList} from '../../interfaces/message-list.interface';
+import {Message} from '../../interfaces/message.interface'
 
-export default class ScoutRecommendationApi {
+export default class MessageApi {
 
   private static API_URL: string = 'http://127.0.0.1/api/scout-recommendation/get';
 
-  static getAll = async (): Promise<ScoutRecommendationList> => {
+  static getAll = async (): Promise<MessageList> => {
     const response: AxiosResponse = 
-    await axios.get<ScoutRecommendationList, AxiosResponse<ScoutRecommendationList>>(ScoutRecommendationApi.API_URL);
+    await axios.get<MessageList, AxiosResponse<MessageList>>(MessageApi.API_URL);
     return await response.data;
   }
 
-  static post = async(scoutRecommendation:ScoutRecommendation): Promise<void> => {
-    axios.post<ScoutRecommendation,AxiosResponse<any>>(ScoutRecommendationApi.API_URL, scoutRecommendation).then(()=>{});
-    ScoutRecommendationApi.getAll();
+  static post = async(message:Message): Promise<void> => {
+    axios.post<Message,AxiosResponse<any>>(MessageApi.API_URL, message).then(()=>{});
+    MessageApi.getAll();
   }
 
 }
