@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState } from 'react';
 import { connect } from 'react-redux';
 import { actionPostMessage } from '../../../../actions';
-import Message from  '.././../../../interfaces/message.interface';
+import {Message} from  '.././../../../interfaces/message.interface';
 
 interface Props {
   postData: (message: Message) => () => void

@@ -1,9 +1,9 @@
 import React, {FunctionComponent} from "react";
-import Message from '../../../interfaces/message.interface';
+import {Message} from '../../../interfaces/message.interface';
 import style from './style.less';
 import { connect } from 'react-redux';
 import axios from "axios";
-import {actionFetchRecommendations} from '../../../actions'
+import {actionFetchMessage} from '../../../actions'
 
 
 interface Props {
@@ -27,7 +27,7 @@ const MessageTile: FunctionComponent<Props> = ({message: message,loadData}) => {
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    loadData: () => dispatch(actionFetchRecommendations)
+    loadData: () => dispatch(actionFetchMessage)
   };
 };
 

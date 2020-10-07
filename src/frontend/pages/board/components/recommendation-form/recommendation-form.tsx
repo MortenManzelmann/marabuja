@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useState } from 'react';
 import { connect } from 'react-redux';
 import { actionPostMessage } from '../../../../actions';
-import {ScoutRecommendation} from '../../../../interfaces/scout-recommendation.interface';
+import {Message} from '../../../../interfaces/message.interface';
 
 interface Props {
-  postData: (message: ScoutRecommendation) => () => void
+  postData: (message: Message) => () => void
 }
 
 const RecommendationForm: FunctionComponent<Props> = ({postData}) => {
@@ -33,7 +33,7 @@ const handleChange = (event: React.ChangeEvent<HTMLInputElement>) :void => { set
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    postData: (message: ScoutRecommendation) => dispatch(actionPostMessage(message))
+    postData: (message: Message) => dispatch(actionPostMessage(message))
   };
 };
 
