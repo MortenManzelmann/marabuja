@@ -27,7 +27,7 @@ class ScoutRecommendationApiController implements Controller {
   private getAll = (_request: Request, response: Response): void => {
     this.scoutRecommendationsModel.find()
       .then((data) => {
-        response.send({ scoutRecommendationsList: data });
+        response.send({ messageList: data });
       });
   }
 

@@ -32,7 +32,7 @@ const MessageList: FunctionComponent<Props> = ({ messageList: messageList }) => 
 }
 const mapStateToProps = (state: AppState, ownProps: Props) => {
   return {
-    message: state.list.messageList,
+    messageList: state.list.messageList,
   };
 };
 
