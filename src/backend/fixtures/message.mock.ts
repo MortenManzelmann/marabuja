@@ -1,7 +1,7 @@
-import { ScoutRecommendation } from "../interfaces/scout-recommendation.interface"
-import { ScoutRecommendationList } from "../interfaces/scout-recommendation-list.interface"
+import Message from "../interfaces/message.interface"
+import MessageList from "../interfaces/message-list.interface"
 
-const tile1: ScoutRecommendation = {
+const tile1: Message = {
   _id: '1',
   title: 'Title',
   description: 'I\'m from the backend',
@@ -9,7 +9,7 @@ const tile1: ScoutRecommendation = {
   created: 'today',
 }
 
-const tile2: ScoutRecommendation = {
+const tile2: Message = {
   _id: '2',
   title: 'something',
   description: 'Description',
@@ -17,7 +17,7 @@ const tile2: ScoutRecommendation = {
   created: 'today',
 }
 
-const tile3: ScoutRecommendation = {
+const tile3: Message = {
   _id: '3',
   title: 'Title',
   description: 'Description',
@@ -25,6 +25,6 @@ const tile3: ScoutRecommendation = {
   created: 'today',
 }
 
-const scoutRecommendationsMock: ScoutRecommendationList = { scoutRecommendationsList : [tile1, tile2, tile3]}; 
+const messageListMock: MessageList = { messageList : [tile1, tile2, tile3]}; 
 
-export default scoutRecommendationsMock
+export default messageListMock

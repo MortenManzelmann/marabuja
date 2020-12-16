@@ -1,4 +1,5 @@
 import * as mongoose from 'mongoose';
+
 import Message from '../interfaces/message.interface';
  
 const messageSchema = new mongoose.Schema({
