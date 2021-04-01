@@ -4,7 +4,7 @@ import {Message} from '../../interfaces/message.interface'
 
 export default class MessageApi {
 
-  private static API_URL: string = 'http://127.0.0.1/api/scout-recommendation/get';
+  private static API_URL: string = 'http://127.0.0.1/api/message/get';
 
   static getAll = async (): Promise<MessageList> => {
     const response: AxiosResponse = 
