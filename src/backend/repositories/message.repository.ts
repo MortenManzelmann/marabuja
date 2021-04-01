@@ -1,12 +1,11 @@
 import MessageModel from '../models/message.model';
-import MessageInterface from '../interfaces/message.interface';
 
 class MessageRepository {
 	private messagesModel = MessageModel;
 
-	public findById(id:number): MessageInterface
+	public findById(id:number): any
 	{
-	    return this.messagesModel.findById(id);
+		return this.messagesModel.findById(id);
 	}
 }
 
